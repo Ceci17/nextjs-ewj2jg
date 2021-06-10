@@ -12,6 +12,7 @@ import gql from 'graphql-tag';
 import Link from 'next/link';
 import { useQuery } from '@apollo/client';
 import { initializeApollo } from '../lib/apolloClient';
+import BasicTable from '@components/BasicTable';
 
 const ViewerQuery = gql`
   query ViewerQuery {
@@ -24,23 +25,23 @@ const ViewerQuery = gql`
 `;
 
 export default function Home(props) {
-  console.log(props);
-  const { data } = useQuery(ViewerQuery);
-  console.log(data);
+  // console.log(props);
+  // const { data } = useQuery(ViewerQuery);
+  // console.log(data);
 
-  const { values, errors, handleSubmit, handleChange } = useFormik({
-    initialValues: {
-      email: '',
-      password: ''
-    },
-    onSubmit: values => {
-      console.log(values);
-    }
-  });
+  // const { values, errors, handleSubmit, handleChange } = useFormik({
+  //   initialValues: {
+  //     email: '',
+  //     password: ''
+  //   },
+  //   onSubmit: values => {
+  //     console.log(values);
+  //   }
+  // });
 
   return (
     <div className={styles.container}>
-      <Head>
+      {/* <Head>
         <title>Create Next App</title>
       </Head>
       <Typography variant="h3">Formik</Typography>
@@ -68,7 +69,8 @@ export default function Home(props) {
         <Button variant="contained" color="primary" type="submit">
           Submit
         </Button>
-      </form>
+      </form> */}
+      <BasicTable />
     </div>
   );
 }
