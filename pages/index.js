@@ -7,12 +7,13 @@ import {
   FormControl
 } from '@material-ui/core';
 import styles from '../styles/Home.module.css';
+
 import { useFormik } from 'formik';
 import gql from 'graphql-tag';
 import Link from 'next/link';
 import { useQuery } from '@apollo/client';
 import { initializeApollo } from '../lib/apolloClient';
-import BasicTable from '@components/BasicTable';
+import BasicTable from '../components/BasicTable';
 
 const ViewerQuery = gql`
   query ViewerQuery {
