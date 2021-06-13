@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useTable } from 'react-table';
+import { useTable, useSortBy } from 'react-table';
 import { COLUMNS } from './columns';
 import {
   Table,
@@ -19,16 +19,11 @@ const useStyles = makeStyles({
   }
 });
 
-const BasicTable = () => {
+const SortingTable = () => {
   const data = useMemo(() => MOCK_DATA, []);
   const columns = useMemo(() => COLUMNS, []);
 
   const classes = useStyles();
-
-  const table = useTable({
-    columns,
-    data
-  });
 
   const {
     getTableProps,
@@ -37,7 +32,13 @@ const BasicTable = () => {
     footerGroups,
     rows,
     prepareRow
-  } = table;
+  } = useTable(
+    {
+      columns,
+      data
+    },
+    useSortBy
+  );
 
   return (
     <TableContainer className={classes.container}>
@@ -46,7 +47,16 @@ const BasicTable = () => {
           {headerGroups.map(headerGroup => (
             <TableRow {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(column => (
-                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  {column.render('Header')}
+                  <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? ' 🔽'
+                        : ' 🔼'
+                      : ''}
+                  </span>
+                </th>
               ))}
             </TableRow>
           ))}
@@ -83,4 +93,4 @@ const BasicTable = () => {
   );
 };
 
-export default BasicTable;
+export default SortingTable;

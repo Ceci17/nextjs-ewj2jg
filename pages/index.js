@@ -13,17 +13,17 @@ import gql from 'graphql-tag';
 import Link from 'next/link';
 import { useQuery } from '@apollo/client';
 import { initializeApollo } from '../lib/apolloClient';
-import BasicTable from '../components/BasicTable';
+import SortingTable from '../components/BasicTable';
 
-const ViewerQuery = gql`
-  query ViewerQuery {
-    viewer {
-      id
-      name
-      status
-    }
-  }
-`;
+// const ViewerQuery = gql`
+//   query ViewerQuery {
+//     viewer {
+//       id
+//       name
+//       status
+//     }
+//   }
+// `;
 
 export default function Home(props) {
   // console.log(props);
@@ -71,7 +71,7 @@ export default function Home(props) {
           Submit
         </Button>
       </form> */}
-      <BasicTable />
+      <SortingTable />
     </div>
   );
 }
