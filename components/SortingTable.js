@@ -16,8 +16,7 @@ import GlobalFilter from './GlobalFilter';
 
 const useStyles = makeStyles({
   container: {
-    maxHeight: 440,
-    backgroundColor: 'red'
+    maxHeight: 440
   }
 });
 
@@ -34,7 +33,7 @@ const SortingTable = () => {
     footerGroups,
     rows,
     prepareRow,
-    state: [{globalFilter}],
+    state,
     setGlobalFilter
   } = useTable(
     {
@@ -45,11 +44,11 @@ const SortingTable = () => {
     useSortBy
   );
 
-  console.log(globalFilter)
+  const { globalFilter } = state;
 
   return (
     <>
-      <GlobalFilter filter={globalFilter} setGlobalFilter={setGlobalFilter} />
+      <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
       <TableContainer className={classes.container}>
         <Table {...getTableProps()}>
           <TableHead>
