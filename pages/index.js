@@ -13,7 +13,7 @@ import gql from 'graphql-tag';
 import Link from 'next/link';
 import { useQuery } from '@apollo/client';
 import { initializeApollo } from '../lib/apolloClient';
-import SortingTable from '../components/BasicTable';
+import SortingTable from '../components/SortingTable';
 
 // const ViewerQuery = gql`
 //   query ViewerQuery {
