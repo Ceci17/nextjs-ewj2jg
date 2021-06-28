@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useTable, useSortBy, useGlobalFilter } from 'react-table';
+import { useTable, useSortBy, useGlobalFilter, useFilters } from 'react-table';
 import { COLUMNS } from './columns';
 import {
   Table,
@@ -40,6 +40,7 @@ const SortingTable = () => {
       columns,
       data
     },
+    useFilters,
     useGlobalFilter,
     useSortBy
   );
@@ -64,6 +65,9 @@ const SortingTable = () => {
                           : ' 🔼'
                         : ''}
                     </span>
+                    <div>
+                      {column.canFilter ? column.render('Filter') : null}
+                    </div>
                   </th>
                 ))}
               </TableRow>
