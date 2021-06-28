@@ -34,18 +34,18 @@ const SortingTable = () => {
     footerGroups,
     rows,
     prepareRow,
-    state,
+    state: [{globalFilter}],
     setGlobalFilter
   } = useTable(
     {
       columns,
       data
     },
-    useSortBy,
-    useGlobalFilter
+    useGlobalFilter,
+    useSortBy
   );
 
-  const { globalFilter } = state;
+  console.log(globalFilter)
 
   return (
     <>
