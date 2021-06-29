@@ -12,8 +12,11 @@ export default function GlobalFilter({ filter = '', setFilter }) {
     <div>
       Search:{' '}
       <input
-        value={filter}
-        onChange={e => setFilter(e.target.value)}
+        value={value}
+        onChange={e => {
+          setValue(e.target.value);
+          onChange(e.target.value);
+        }}
         placeholder="search table"
       />
     </div>
