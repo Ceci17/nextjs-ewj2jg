@@ -25,9 +25,12 @@ const SortingTable = () => {
   const data = useMemo(() => MOCK_DATA, []);
   const columns = useMemo(() => COLUMNS, []);
 
-  const defaultColumn = useMemo(() => {
-    Filter: ColumnFilter;
-  }, []);
+  const defaultColumn = useMemo(
+    () => ({
+      Filter: ColumnFilter
+    }),
+    []
+  );
 
   const classes = useStyles();
 
