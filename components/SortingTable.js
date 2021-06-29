@@ -10,10 +10,10 @@ import {
   TableFooter,
   TableRow
 } from '@material-ui/core';
-import ColumnFilter from './ColumnFilter';
-import MOCK_DATA from '../MOCK_DATA.json';
 import { makeStyles } from '@material-ui/core/styles';
 import GlobalFilter from './GlobalFilter';
+import ColumnFilter from './ColumnFilter';
+import MOCK_DATA from '../MOCK_DATA.json';
 
 const useStyles = makeStyles({
   container: {
