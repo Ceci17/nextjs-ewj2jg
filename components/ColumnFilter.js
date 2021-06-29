@@ -5,7 +5,7 @@ export default function ColumnFilter({ column: { filterValue, setFilter } }) {
       <input
         value={filterValue || ''}
         onChange={e => setFilter(e.target.value)}
-        placeholder="search table"
+        placeholder="search column"
       />
     </div>
   );

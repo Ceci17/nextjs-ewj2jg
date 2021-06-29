@@ -5,55 +5,47 @@ export const COLUMNS = [
     Header: 'ID',
     Footer: 'ID',
     accessor: 'id',
-    Filter: ColumnFilter
+    disableFilter: true
   },
   {
     Header: 'First Name',
     Footer: 'First Name',
-    accessor: 'first_name',
-    Filter: ColumnFilter
+    accessor: 'first_name'
   },
   {
     Header: 'Last Name',
     Footer: 'Last Name',
-    accessor: 'last_name',
-    Filter: ColumnFilter
+    accessor: 'last_name'
   },
   {
     Header: 'Email',
     Footer: 'Email',
-    accessor: 'email',
-    Filter: ColumnFilter
+    accessor: 'email'
   },
   {
     Header: 'Gender',
     Footer: 'Gender',
-    accessor: 'gender',
-    Filter: ColumnFilter
+    accessor: 'gender'
   },
   {
     Header: 'Birthday',
     Footer: 'Birthday',
-    accessor: 'birthday',
-    Filter: ColumnFilter
+    accessor: 'birthday'
   },
   {
     Header: 'Age',
     Footer: 'Age',
-    accessor: 'age',
-    Filter: ColumnFilter
+    accessor: 'age'
   },
   {
     Header: 'Country',
     Footer: 'Country',
-    accessor: 'country',
-    Filter: ColumnFilter
+    accessor: 'country'
   },
   {
     Header: 'Phone',
     Footer: 'Phone',
-    accessor: 'phone',
-    Filter: ColumnFilter
+    accessor: 'phone'
   }
 ];
 
